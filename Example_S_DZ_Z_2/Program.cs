@@ -11,9 +11,17 @@ Console.Write("Введите второе число: ");
 int b = Convert.ToInt32(Console.ReadLine());
 
 int max = a;
+int min = a;
 
 if(a > max ) max = a;
+if(a < max ) min = a;
 if(b > max ) max = b;
-
-Console.Write ("Большее ");
+if(b < max ) min = b;
+if (Convert.ToBoolean (a = b)) Console.Write ("Числа равны");
+else
+{
+Console.Write ("Большее: ");
 Console.WriteLine(max);
+Console.Write ("Меньшее: ");
+Console.WriteLine(min);
+}
