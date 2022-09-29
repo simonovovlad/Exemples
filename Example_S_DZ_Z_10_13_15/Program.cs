@@ -8,11 +8,16 @@
     Console.WriteLine("Enter the number: ");
     int randomov = Convert.ToInt32(Console.ReadLine());
     //int randomov = new Random().Next(100, 1000);
-    int randomov2 = randomov / 10 % 10;
-    Console.WriteLine(randomov);
-    Console.WriteLine (randomov2);
+    if (randomov > 99 && randomov < 1000)
+    {
+    Console.WriteLine ("There is the 2th number - " + randomov / 10 % 10);
+    }
+    else
+    {
+      Console.WriteLine ("non-three-digit number entered");
+    }
 }
-Z_10();
+//Z_10();
 void Z_13()
 {
 // Задача 13: Напишите программу, которая с помощью деления выводит третью цифру 
@@ -25,18 +30,24 @@ void Z_13()
 // int randomov = Convert.ToInt32(Console.ReadLine());
 // int randomov3 = randomov % 10;
 
-Console.Write("Введи число: ");
-int randomov = Convert.ToInt32(Console.ReadLine());
-string randomov3 = Convert.ToString(randomov);
-if (randomov3.Length > 2)
+int number = Convert.ToInt32(Console.ReadLine());
+number = Math.Abs(number);  
+if (number > 99)
 {
-  Console.WriteLine("third - " + randomov3[2]);
+  while (number > 999)
+  {
+      number /=10;
+  }
+  Console.WriteLine("Третья цифра числа" + number%10);
 }
 else 
 {
   Console.WriteLine("- There is no third number");
 }
+
 }
+//Z_13 ();
+void Z_15 () 
 //Z_13();
 
 // Задача 15: Напишите программу, которая принимает на вход цифру, 
@@ -44,8 +55,6 @@ else
 // 6 -> да
 // 7 -> да
 // 1 -> нет
-
-void Z_15 () 
 {
   Console.WriteLine("Введите номер деня недели: ");
   int day = Convert.ToInt32(Console.ReadLine());
@@ -61,3 +70,14 @@ void Z_15 ()
   else Console.WriteLine("не выходной");
 }
 //Z_15 ();
+void NeedForSpeed()
+{
+DateTime lastTime = DateTime.Now;
+int number = 123;
+for (int i = 0; i < 100000000; i++)
+{
+  var n = Convert.ToString(number)[1]; //var n = number/10%10;
+}
+Console.WriteLine(DateTime.Now - lastTime);
+}
+//NeedForSpeed();
