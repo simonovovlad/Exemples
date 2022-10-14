@@ -9,6 +9,7 @@ for (int i = 1; i <= Number; i++)
     { 
         //Console.Write($"{i} + ");
         sum += i;
+        Console.WriteLine(sum);
     }
     Console.Write(sum);
 }
@@ -54,25 +55,44 @@ for (int i = 2; i <= Number; i++)
 void Z30()// Рандомный массив.
 {
     /* Задача 30: Напишите программу, которая
-выводит массив из 8 элементов, заполненный
-нулями и единицами в случайном порядке.
-[1,0,1,1,0,1,0,0]
-*/
-Random random = new Random ();
-int size = random.Next(4,9);
-int[] numbers = new int [size];
-Console.WriteLine(size);
-Console.WriteLine();
+    выводит массив из 8 элементов, заполненный
+    нулями и единицами в случайном порядке.
+    [1,0,1,1,0,1,0,0]
+    */
 
-for (int i = 0; i < size; i++)
+    Random random = new Random ();
+    int size = 5;//random.Next(4,9);
+    int[] numbers = new int [size];
+    Console.WriteLine(size);
+    Console.WriteLine();
+
+    //FillArray(numbers);
+     for (int i = 0; i < numbers.Length; i++)
+    { 
+        Console.WriteLine($"Enter {i+1}-th element of erray: ");
+        numbers[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    
+    PritArray(numbers);
+    
+    
+    void PritArray(int[] num)
+    {
+    for (int i = 0; i < size; i++)
+    { 
+        Console.Write(num[i] + "   ");
+    }
+
+    }
+    
+
+    void FillArray(int[] num)
+    {
+        Random random = new Random();
+        for (int i = 0; i < size; i++)
     { 
         numbers[i] = random.Next (0, 2);
     }
-
-for (int i = 0; i < size; i++)
-    { 
-        Console.Write(numbers[i] + "\t");
     }
-    
 }
 Z30();
